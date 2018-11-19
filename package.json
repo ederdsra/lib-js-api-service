@@ -1,0 +1,57 @@
+{
+  "name": "lib-js-api-service",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc -w",
+    "test": "jest --config jestconfig.json --coverage",
+    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
+    "lint": "tslint -p tsconfig.json",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm test && npm run lint",
+    "preversion": "npm run lint",
+    "version": "npm run format && git add -A src",
+    "postversion": "git push && git push --tags"
+  },
+  "files": [
+    "lib"
+  ],
+  "jest": {
+    "moduleFileExtensions": [
+      "ts",
+      "js"
+    ],
+    "transform": {
+      "\\.ts$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+    },
+    "testRegex": "/src/.*\\.spec\\.ts$"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ederdsra/lib-js-api-service.git"
+  },
+  "keywords": [],
+  "author": "Eder Rodrigues Alves <ederdsr@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ederdsra/lib-js-api-service/issues"
+  },
+  "homepage": "https://github.com/ederdsra/lib-js-api-service#readme",
+  "description": "",
+  "devDependencies": {
+    "@types/dotenv": "^6.1.0",
+    "@types/jest": "^21.1.10",
+    "jest": "^21.2.1",
+    "jest-mock-axios": "^2.1.11",
+    "prettier": "^1.15.2",
+    "ts-jest": "^21.2.4",
+    "tslint": "^5.11.0",
+    "tslint-config-prettier": "^1.16.0",
+    "typescript": "^3.1.6"
+  },
+  "dependencies": {
+    "axios": "^0.18.0"
+  }
+}

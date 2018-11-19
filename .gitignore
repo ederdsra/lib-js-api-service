@@ -1,0 +1,14 @@
+.DS_Store
+.env
+test-results.xml
+
+# JetBrains project files
+.idea
+
+# NPM
+node_modules
+
+# Builds
+dist
+
+tests/__reports__/*
